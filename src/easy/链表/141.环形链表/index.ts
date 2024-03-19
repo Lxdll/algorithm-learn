@@ -1,0 +1,48 @@
+/**
+ * 141. 环形链表
+ * https://leetcode.cn/problems/linked-list-cycle/description/
+ *
+ * 解题关键词：链表、快慢指针
+ * 解题思路：
+ *  使用快慢指针，慢指针在 head，快指针在 head.next，
+ *  快指针每次走两步，慢指针每次走一步，如果存在环的话，那么快慢指针终究会相遇，即 slow = fast
+ *  如果不存在环，那么快指针最后会走到尽头，即 fast = null ｜ fast.next = null
+ */
+
+// 链表结构
+class ListNode {
+  val: number;
+  next: ListNode | null;
+  constructor(val?: number, next?: ListNode | null) {
+    this.val = val === undefined ? 0 : val;
+    this.next = next === undefined ? null : next;
+  }
+}
+
+const hasCycle = (head: ListNode | null): boolean => {
+  // 如果 head 为空，或者只存在一个节点，那么不存在环
+  if (head === null || head.next === null) {
+    return false;
+  }
+
+  // 慢指针
+  let slow: ListNode | null = head;
+  // 快指针
+  let fast: ListNode | null = head.next;
+
+  // 当快慢指针没有相遇的时候，继续 loop
+  while (slow !== fast) {
+    // 如果快指针到达了尽头，说明没有环
+    if (fast === null || fast.next === null) {
+      return false;
+    }
+
+    // 慢指针前进一步
+    slow = slow.next!;
+    // 快指针前进两步
+    fast = fast.next.next;
+  }
+
+  // 如果 while 循环执行完，说明快慢指针相遇了，里面有环存在
+  return true;
+};
