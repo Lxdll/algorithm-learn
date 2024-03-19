@@ -1,0 +1,51 @@
+/**
+ * 21. 合并两个有序链表
+ * https://leetcode.cn/problems/linked-list-cycle/description/
+ *
+ * 解题关键词：链表
+ * 解题思路：
+ *  使用一个假的头部 node，然后使用一个指针去不断添加 next，如果 list1 和 list2 都不为空，那么一直往假的头部节点后面添加东西
+ *  如果其中一个链表为空了，那么直接把另一个链表添加到 pointer 的后面就行
+ *  最后返回假头部 node 的 next 即可
+ */
+
+// 节点定义
+class ListNode {
+  val: number;
+  next: ListNode | null;
+  constructor(val?: number, next?: ListNode | null) {
+    this.val = val === undefined ? 0 : val;
+    this.next = next === undefined ? null : next;
+  }
+}
+
+const mergeTowLists = (
+  list1: ListNode | null,
+  list2: ListNode | null
+): ListNode | null => {
+  // 假头部节点
+  const preHead = new ListNode(-1);
+
+  // 指针
+  let pointer = preHead;
+
+  // 如果两个链表都没有空，那么一直判断
+  while (list1 !== null && list2 !== null) {
+    // 如果 list1 的头部节点小，那么将该节点链到 pointer 后面，然后 list1 的指针往后移动
+    if (list1.val <= list2.val) {
+      pointer.next = list1;
+      list1 = list1.next;
+    } else {
+      pointer.next = list2;
+      list2 = list2.next;
+    }
+
+    // pointer 自己也往后移动一个
+    pointer = pointer.next;
+  }
+
+  // 将另外一个还有元素的链表串到后面
+  pointer.next = list1 === null ? list2 : list1;
+
+  return preHead.next;
+};
