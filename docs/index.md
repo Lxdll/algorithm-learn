@@ -4,22 +4,19 @@ layout: home
 
 hero:
   name: "algorithm-learn"
-  text: "learn"
-  tagline: My great project tagline
+  text: "算法学习"
+  tagline: 每天进步一点
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
-    - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: 开始算法复习
+      link: /template
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: 不允许制造焦虑.
+    details: Not allowed to create anxiety.
+  - title: 坚持就是胜利.
+    details: Success Belongs to the Persevering.
+  - title: 快乐每一天.
+    details: Happy everyday.
 ---
 
