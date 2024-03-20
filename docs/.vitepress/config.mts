@@ -4,6 +4,7 @@ import { defineConfig } from "vitepress";
 export default defineConfig({
   title: "Lxdll 的算法学习小册",
   description: "learn",
+  base: '/algorithm-learn/',
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
