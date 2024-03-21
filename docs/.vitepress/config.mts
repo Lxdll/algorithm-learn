@@ -4,7 +4,7 @@ import { defineConfig } from "vitepress";
 export default defineConfig({
   title: "Lxdll 的算法学习小册",
   description: "learn",
-  base: '/algorithm-learn/',
+  base: "/algorithm-learn/",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
@@ -33,6 +33,10 @@ export default defineConfig({
         text: "栈",
         items: [{ text: "20.有效的括号" }],
       },
+      {
+        text: "二叉树",
+        items: [{ text: "637.二叉树的层平均值" }],
+      },
     ].map((item) => {
       return {
         ...item,
@@ -40,8 +44,6 @@ export default defineConfig({
       };
     }),
 
-    socialLinks: [
-      { icon: "github", link: "https://github.com/Lxdll" },
-    ],
+    socialLinks: [{ icon: "github", link: "https://github.com/Lxdll" }],
   },
 });
