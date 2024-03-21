@@ -44,6 +44,7 @@ export default defineConfig({
           { text: "226.翻转二叉树" },
           { text: "104.二叉树的最大深度" },
           { text: "100.相同的树" },
+          { text: "101.对称二叉树" },
         ],
       },
     ].map((item) => {
