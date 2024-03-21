@@ -17,6 +17,18 @@ const init = () => {
   return root;
 };
 
+function invertTree(root: TreeNode | null): TreeNode | null {
+  if (root === null) return null
+
+  const left = invertTree(root.left)
+  const right = invertTree(root.right)
+
+  root.left = right
+  root.right = left
+
+  return root
+};
+
 function averageOfLevels(root: TreeNode | null): number[] {
   const stack: TreeNode[] = [];
 
@@ -53,7 +65,8 @@ function averageOfLevels(root: TreeNode | null): number[] {
 }
 
 const root = init();
-const result = averageOfLevels(root);
+// const result = averageOfLevels(root);
+const result = invertTree(root)
 console.log(
   "%c [ result ]-57",
   "font-size:13px; background:pink; color:#bf2c9f;",
