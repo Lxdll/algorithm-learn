@@ -10,11 +10,32 @@ class TreeNode {
 }
 
 const init = () => {
-  const root = new TreeNode(3);
-  root.left = new TreeNode(9, null, null);
-  root.right = new TreeNode(20, new TreeNode(15), new TreeNode(7));
+  const root = new TreeNode(1);
+  root.left = new TreeNode(2, new TreeNode(4), null);
+  root.right = new TreeNode(3, null, new TreeNode(5));
 
   return root;
+};
+
+
+function maxDepth(root: TreeNode | null): number {
+  if (root === null) return 0
+
+  let maxDepth = 0
+  const queue: TreeNode[] = [root]
+
+  while (queue.length) {
+      let size = queue.length
+
+      while (size--) {
+          const node = queue.shift()!
+          if (node.left) queue.push(node.left)
+          if (node.right) queue.push(node.right)
+      }
+      maxDepth++
+  }
+
+  return maxDepth
 };
 
 function invertTree(root: TreeNode | null): TreeNode | null {
@@ -66,7 +87,8 @@ function averageOfLevels(root: TreeNode | null): number[] {
 
 const root = init();
 // const result = averageOfLevels(root);
-const result = invertTree(root)
+// const result = invertTree(root)
+const result = maxDepth(root)
 console.log(
   "%c [ result ]-57",
   "font-size:13px; background:pink; color:#bf2c9f;",
