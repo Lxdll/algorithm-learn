@@ -35,7 +35,10 @@ export default defineConfig({
       },
       {
         text: "二叉树",
-        items: [{ text: "637.二叉树的层平均值" }],
+        items: [
+          { text: "102.二叉树的层序遍历" },
+          { text: "637.二叉树的层平均值" }
+        ],
       },
     ].map((item) => {
       return {
