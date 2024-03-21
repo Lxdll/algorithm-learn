@@ -17,6 +17,38 @@ const init = () => {
   return root;
 };
 
+function isSameTree(p: TreeNode | null, q: TreeNode | null): boolean {
+  // 都为 null
+  if (p === null && q === null) return true;
+  // 有一个为 null，一个不为 null
+  if (p === null || q === null) return false;
+  // 两个的值不一样
+  if (p.val !== q.val) return false;
+
+  // 队列1
+  const queue1: (TreeNode | null)[] = [p];
+  // 队列2
+  const queue2: (TreeNode | null)[] = [q];
+
+  while (queue1.length && queue2.length) {
+    const node1 = queue1.shift()!;
+    const node2 = queue2.shift()!;
+
+    // 如果两个 node 都为 null，继续比较剩下的
+    if (node1 === null && node2 === null) continue;
+    // 如果有一个为 null，有一个不为 null
+    if (node1 === null || node2 === null) return false;
+    // 值不一样
+    if (node1.val !== node2.val) return false;
+
+    // 将左右节点都 push 进去
+    queue1.push(node1.left, node1.right);
+    queue2.push(node2.left, node2.right);
+  }
+
+  return !queue1.length && !queue2.length;
+}
+
 
 function maxDepth(root: TreeNode | null): number {
   if (root === null) return 0
@@ -85,10 +117,12 @@ function averageOfLevels(root: TreeNode | null): number[] {
   return result;
 }
 
-const root = init();
+const root1 = init();
+const root2 = init();
 // const result = averageOfLevels(root);
 // const result = invertTree(root)
-const result = maxDepth(root)
+// const result = maxDepth(root)
+const result = isSameTree(root1, root2)
 console.log(
   "%c [ result ]-57",
   "font-size:13px; background:pink; color:#bf2c9f;",

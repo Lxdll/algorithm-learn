@@ -43,6 +43,7 @@ export default defineConfig({
           { text: "199.二叉树的右视图" },
           { text: "226.翻转二叉树" },
           { text: "104.二叉树的最大深度" },
+          { text: "100.相同的树" },
         ],
       },
     ].map((item) => {
