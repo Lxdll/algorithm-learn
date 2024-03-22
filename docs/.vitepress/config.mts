@@ -45,6 +45,7 @@ export default defineConfig({
           { text: "104.二叉树的最大深度" },
           { text: "100.相同的树" },
           { text: "101.对称二叉树" },
+          { text: "222.完全二叉树的节点个数" },
         ],
       },
     ].map((item) => {
