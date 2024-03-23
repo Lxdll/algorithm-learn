@@ -15,12 +15,12 @@ function countNodes(root: TreeNode | null): number {
   let left = root.left, right = root.right;
   let leftDepth = 0, rightDepth = 0;
   while (left) {
-      leftDepth += 1
-      left = left.left
+    leftDepth += 1
+    left = left.left
   }
-  while(right) {
-      rightDepth += 1
-      right = right.right
+  while (right) {
+    rightDepth += 1
+    right = right.right
   }
 
   if (leftDepth === rightDepth) return 2 ** leftDepth - 1
@@ -76,14 +76,14 @@ function maxDepth(root: TreeNode | null): number {
   const queue: TreeNode[] = [root]
 
   while (queue.length) {
-      let size = queue.length
+    let size = queue.length
 
-      while (size--) {
-          const node = queue.shift()!
-          if (node.left) queue.push(node.left)
-          if (node.right) queue.push(node.right)
-      }
-      maxDepth++
+    while (size--) {
+      const node = queue.shift()!
+      if (node.left) queue.push(node.left)
+      if (node.right) queue.push(node.right)
+    }
+    maxDepth++
   }
 
   return maxDepth
@@ -129,7 +129,7 @@ function averageOfLevels(root: TreeNode | null): number[] {
 
     result.push(
       curLayerNodeValues.reduce((pre, cur) => pre + cur, 0) /
-        curLayerNodeValues.length
+      curLayerNodeValues.length
     );
   }
 
@@ -143,8 +143,82 @@ const root1 = init();
 // const result = maxDepth(root)
 // const result = isSameTree(root1, root2)
 const result = countNodes(root1)
-console.log(
-  "%c [ result ]-57",
-  "font-size:13px; background:pink; color:#bf2c9f;",
-  result
-);
+// console.log(
+//   "%c [ result ]-57",
+//   "font-size:13px; background:pink; color:#bf2c9f;",
+//   result
+// );
+
+// var calculate = function (s: string) {
+//   const ops = [1];
+//   let sign = 1;
+
+//   let ret = 0;
+//   const n = s.length;
+//   let i = 0;
+//   while (i < n) {
+//     if (s[i] === ' ') {
+//       i++;
+//     } else if (s[i] === '+') {
+//       sign = ops[ops.length - 1];
+//       i++;
+//     } else if (s[i] === '-') {
+//       sign = -ops[ops.length - 1];
+//       i++;
+//     } else if (s[i] === '(') {
+//       ops.push(sign);
+//       i++;
+//     } else if (s[i] === ')') {
+//       ops.pop();
+//       i++;
+//     } else {
+//       let num = 0;
+//       while (i < n && !(isNaN(Number(s[i]))) && s[i] !== ' ') {
+//         num = num * 10 + s[i].charCodeAt(0) - '0'.charCodeAt(0);
+//         i++;
+//       }
+//       ret += sign * num;
+//     }
+//   }
+//   return ret;
+// };
+
+function calculate(s: string): number {
+  let result = 0;
+  const ops = [1];
+  let currentSign = 1;
+  const length = s.length
+
+  let i = 0;
+  while (i < length) {
+    const curChar = s[i]
+
+    if (curChar === ' ') {
+      i++
+    } else if (curChar === '+') {
+      currentSign = ops[ops.length - 1]
+      i++
+    } else if (curChar === '-') {
+      currentSign = -ops[ops.length - 1]
+      i++
+    } else if (curChar === '(') {
+      ops.push(currentSign)
+      i++
+    } else if (curChar === ')') {
+      ops.pop()
+      i++
+    } else {
+      let num = 0
+      while (i < length && !(isNaN(Number(s[i]))) && s[i] !== ' ') {
+        num = num * 10 + (s[i].charCodeAt(0) - '0'.charCodeAt(0))
+        i++
+      }
+      result += currentSign * num
+    }
+  }
+
+  return result
+};
+
+const result1 = calculate("1 + 1")
+console.log('%c [ result1 ]-187', 'font-size:13px; background:pink; color:#bf2c9f;', result1)
