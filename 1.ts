@@ -9,10 +9,29 @@ class TreeNode {
   }
 }
 
+function countNodes(root: TreeNode | null): number {
+  if (root === null) return 0;
+
+  let left = root.left, right = root.right;
+  let leftDepth = 0, rightDepth = 0;
+  while (left) {
+      leftDepth += 1
+      left = left.left
+  }
+  while(right) {
+      rightDepth += 1
+      right = right.right
+  }
+
+  if (leftDepth === rightDepth) return 2 ** leftDepth - 1
+
+  return 1 + countNodes(root.left) + countNodes(root.right)
+};
+
 const init = () => {
   const root = new TreeNode(1);
-  root.left = new TreeNode(2, new TreeNode(4), null);
-  root.right = new TreeNode(3, null, new TreeNode(5));
+  root.left = new TreeNode(2, new TreeNode(4), new TreeNode(5));
+  root.right = new TreeNode(3, new TreeNode(6), null);
 
   return root;
 };
@@ -118,11 +137,12 @@ function averageOfLevels(root: TreeNode | null): number[] {
 }
 
 const root1 = init();
-const root2 = init();
+// const root2 = init();
 // const result = averageOfLevels(root);
 // const result = invertTree(root)
 // const result = maxDepth(root)
-const result = isSameTree(root1, root2)
+// const result = isSameTree(root1, root2)
+const result = countNodes(root1)
 console.log(
   "%c [ result ]-57",
   "font-size:13px; background:pink; color:#bf2c9f;",
