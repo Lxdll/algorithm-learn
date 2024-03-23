@@ -33,7 +33,8 @@ export default defineConfig({
         text: "栈",
         items: [
           { text: "20.有效的括号" },
-          { text: "224.基本计算器" }
+          { text: "224.基本计算器" },
+          { text: "227.基本计算器II" }
         ],
       },
       {
