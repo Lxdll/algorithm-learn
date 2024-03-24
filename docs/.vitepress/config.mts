@@ -50,6 +50,7 @@ export default defineConfig({
           { text: "100.相同的树" },
           { text: "101.对称二叉树" },
           { text: "222.完全二叉树的节点个数" },
+          { text: "112.路径总和" },
         ],
       },
     ].map((item) => {
