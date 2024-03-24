@@ -52,6 +52,7 @@ export default defineConfig({
           { text: "222.完全二叉树的节点个数" },
           { text: "112.路径总和" },
           { text: "530.二叉搜索树的最小绝对查" },
+          { text: "114.二叉树展开为链表" },
         ],
       },
     ].map((item) => {
