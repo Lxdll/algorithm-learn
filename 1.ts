@@ -220,5 +220,19 @@ function calculate(s: string): number {
   return result
 };
 
-const result1 = calculate("1 + 1")
+let pre: TreeNode | null = null
+function isValidBST(root: TreeNode | null): boolean {
+    if (root === null) return true
+    const leftIsValidBST = isValidBST(root.left)
+    if (pre !== null && root.val <= pre.val) {
+        return false
+    }
+    pre = root
+    const rightIsValidBST = isValidBST(root.right)
+
+    return leftIsValidBST && rightIsValidBST
+};
+
+// const result1 = calculate("1 + 1")
+const result1 = isValidBST(new TreeNode(0))
 console.log('%c [ result1 ]-187', 'font-size:13px; background:pink; color:#bf2c9f;', result1)
