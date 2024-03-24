@@ -42,9 +42,9 @@ function countNodes(root: TreeNode | null): number {
 };
 
 const init = () => {
-  const root = new TreeNode(1);
-  root.left = new TreeNode(2, new TreeNode(4), new TreeNode(5));
-  root.right = new TreeNode(3, new TreeNode(6), null);
+  const root = new TreeNode(4);
+  root.left = new TreeNode(9, new TreeNode(5), new TreeNode(1));
+  root.right = new TreeNode(0);
 
   return root;
 };
@@ -155,12 +155,32 @@ const root1 = init();
 // const result = invertTree(root)
 // const result = maxDepth(root)
 // const result = isSameTree(root1, root2)
-const result = countNodes(root1)
-// console.log(
-//   "%c [ result ]-57",
-//   "font-size:13px; background:pink; color:#bf2c9f;",
-//   result
-// );
+// const result = countNodes(root1)
+
+function sumNumbers(root: TreeNode | null): number {
+  const dfs = (root: TreeNode | null): number => {
+    if (root === null) return 0
+
+    if (root.left === null && root.right === null) return root.val
+
+    const leftSum = dfs(root.left)
+    const rightSum = dfs(root.right)
+
+    return (root.val * 10 * String(leftSum).length + leftSum) + (root.val * 10 * String(rightSum).length + rightSum)
+  }
+
+  const sum = dfs(root)
+
+  return sum
+};
+
+const result = sumNumbers(root1)
+
+console.log(
+  "%c [ result ]-57",
+  "font-size:13px; background:pink; color:#bf2c9f;",
+  result
+);
 
 // var calculate = function (s: string) {
 //   const ops = [1];
@@ -235,15 +255,15 @@ function calculate(s: string): number {
 
 let pre: TreeNode | null = null
 function isValidBST(root: TreeNode | null): boolean {
-    if (root === null) return true
-    const leftIsValidBST = isValidBST(root.left)
-    if (pre !== null && root.val <= pre.val) {
-        return false
-    }
-    pre = root
-    const rightIsValidBST = isValidBST(root.right)
+  if (root === null) return true
+  const leftIsValidBST = isValidBST(root.left)
+  if (pre !== null && root.val <= pre.val) {
+    return false
+  }
+  pre = root
+  const rightIsValidBST = isValidBST(root.right)
 
-    return leftIsValidBST && rightIsValidBST
+  return leftIsValidBST && rightIsValidBST
 };
 
 const initNodeClass = () => {
@@ -283,4 +303,4 @@ function connect(root: NodeClass | null): NodeClass | null {
 
 const result1 = connect(initNodeClass())
 
-console.log('%c [ result1 ]-187', 'font-size:13px; background:pink; color:#bf2c9f;', result1)
+// console.log('%c [ result1 ]-187', 'font-size:13px; background:pink; color:#bf2c9f;', result1)
