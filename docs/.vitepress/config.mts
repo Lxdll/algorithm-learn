@@ -55,6 +55,7 @@ export default defineConfig({
           { text: "114.二叉树展开为链表" },
           { text: "98.验证二叉搜索树" },
           { text: "230.二叉搜索树中第k小的元素" },
+          { text: "117.填充每个节点的下一个右侧节点指针" },
         ],
       },
     ].map((item) => {

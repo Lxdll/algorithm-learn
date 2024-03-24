@@ -9,6 +9,19 @@ class TreeNode {
   }
 }
 
+class NodeClass {
+  val: number
+  left: NodeClass | null
+  right: NodeClass | null
+  next: NodeClass | null
+  constructor(val?: number, left?: NodeClass, right?: NodeClass, next?: NodeClass) {
+    this.val = (val === undefined ? 0 : val)
+    this.left = (left === undefined ? null : left)
+    this.right = (right === undefined ? null : right)
+    this.next = (next === undefined ? null : next)
+  }
+}
+
 function countNodes(root: TreeNode | null): number {
   if (root === null) return 0;
 
@@ -233,6 +246,41 @@ function isValidBST(root: TreeNode | null): boolean {
     return leftIsValidBST && rightIsValidBST
 };
 
+const initNodeClass = () => {
+  const root = new NodeClass(1)
+  root.left = new NodeClass(2, new NodeClass(4), new NodeClass(5))
+  root.right = new NodeClass(3, undefined, new NodeClass(7))
+
+  return root
+}
+
+
+function connect(root: NodeClass | null): NodeClass | null {
+  if (root === null) return null
+  let queue: NodeClass[] = [root]
+
+  while (queue.length) {
+    let size = queue.length
+
+    const curLayerNode: NodeClass[] = queue.splice(0, size)
+
+    for (let i = 1; i <= size; i++) {
+      const prev = curLayerNode[i - 1]
+      const cur = curLayerNode[i]
+
+      if (prev.left) queue.push(prev.left)
+      if (prev.right) queue.push(prev.right)
+
+      cur ? prev.next = cur : prev.next = null
+    }
+  }
+
+  return root
+};
+
 // const result1 = calculate("1 + 1")
-const result1 = isValidBST(new TreeNode(0))
+// const result1 = isValidBST(new TreeNode(0))
+
+const result1 = connect(initNodeClass())
+
 console.log('%c [ result1 ]-187', 'font-size:13px; background:pink; color:#bf2c9f;', result1)
