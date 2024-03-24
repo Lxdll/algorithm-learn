@@ -54,6 +54,7 @@ export default defineConfig({
           { text: "530.二叉搜索树的最小绝对查" },
           { text: "114.二叉树展开为链表" },
           { text: "98.验证二叉搜索树" },
+          { text: "230.二叉搜索树中第k小的元素" },
         ],
       },
     ].map((item) => {
