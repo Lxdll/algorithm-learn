@@ -26,6 +26,10 @@ export default defineConfig({
         items: [{ text: "template" }],
       },
       {
+        text: "数组",
+        items: [{ text: "88.合并两个有序数组" }],
+      },
+      {
         text: "链表",
         items: [{ text: "21.合并两个有序链表" }, { text: "141.环形链表" }],
       },
