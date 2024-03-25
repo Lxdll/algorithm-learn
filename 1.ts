@@ -301,6 +301,30 @@ function connect(root: NodeClass | null): NodeClass | null {
 // const result1 = calculate("1 + 1")
 // const result1 = isValidBST(new TreeNode(0))
 
-const result1 = connect(initNodeClass())
+// const result1 = connect(initNodeClass())
 
 // console.log('%c [ result1 ]-187', 'font-size:13px; background:pink; color:#bf2c9f;', result1)
+
+function buildTree(inorder: number[], postorder: number[]): TreeNode | null {
+  if (!inorder.length) return null
+  const mid = postorder[postorder.length - 1]
+
+  const root = new TreeNode(mid)
+  const index = inorder.findIndex(item => item === mid)
+  const leftInOrder = inorder.slice(0, index)
+  const rightInOrder = inorder.slice(index + 1)
+
+  const leftPostOrder = postorder.slice(0, leftInOrder.length)
+  const rightPostOrder = postorder.slice(leftInOrder.length + 1, -1)
+
+  root.left = buildTree(leftInOrder, leftPostOrder)
+  root.right = buildTree(rightInOrder, rightPostOrder)
+
+  return root
+};
+
+const res = buildTree(
+  [9, 3, 15, 20, 7],
+  [9, 15, 7, 20, 3]
+)
+console.log('%c [ res ]-327', 'font-size:13px; background:pink; color:#bf2c9f;', res)
