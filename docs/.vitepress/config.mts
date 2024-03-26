@@ -33,6 +33,12 @@ export default defineConfig({
         ],
       },
       {
+        text: "双指针",
+        items: [
+          { text: "125.验证回文串" }
+        ]
+      },
+      {
         text: "链表",
         items: [{ text: "21.合并两个有序链表" }, { text: "141.环形链表" }],
       },

@@ -379,5 +379,30 @@ function removeElement(nums: number[], val: number): number {
 
   return left
 };
-const result2 = removeElement([3,2,2,3], 3)
+
+function isPalindrome(s: string): boolean {
+  let left = 0
+  let right = s.length - 1
+
+  while (left <= right) {
+      if (!isAZ(s[left])) {
+          left++
+          continue
+      } else if (!isAZ(s[right])) {
+          right--
+          continue
+      } else if (s[left].toLowerCase() !== s[right].toLowerCase()) {
+          return false
+      }
+      left++
+      right--
+  }
+
+  return true
+};
+
+const isAZ = (char: string) => {
+  return /[a-z]|[0-9]/i.test(char)
+}
+const result2 = isPalindrome("0P")
 console.log('%c [ result2 ]-349', 'font-size:13px; background:pink; color:#bf2c9f;', result2)
