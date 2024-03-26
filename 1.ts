@@ -363,5 +363,21 @@ function findIndex(nums: number[], target: number) {
 
   return pos
 }
-const result2 = lengthOfLIS([4,10,4,3,8,9])
+
+function removeElement(nums: number[], val: number): number {
+  let left = 0
+  let right = nums.length
+
+  while (left < right) {
+      if (nums[left] !== val) {
+          left++
+      } else {
+          nums[left] = nums[right - 1]
+          right--
+      }
+  }
+
+  return left
+};
+const result2 = removeElement([3,2,2,3], 3)
 console.log('%c [ result2 ]-349', 'font-size:13px; background:pink; color:#bf2c9f;', result2)

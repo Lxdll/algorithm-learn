@@ -27,7 +27,10 @@ export default defineConfig({
       },
       {
         text: "数组",
-        items: [{ text: "88.合并两个有序数组" }],
+        items: [
+          { text: "88.合并两个有序数组" },
+          { text: "27.移除元素" },
+        ],
       },
       {
         text: "链表",
