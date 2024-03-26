@@ -47,6 +47,7 @@ export default defineConfig({
           { text: '70.爬楼梯' },
           { text: '509.斐波那契数' },
           { text: '1137.第N个泰波那契数' },
+          { text: '746.使用最小花费爬楼梯' },
         ]
       },
       {
