@@ -42,6 +42,12 @@ export default defineConfig({
         ],
       },
       {
+        text: "动态规划",
+        items: [
+          { text: '70.爬楼梯' },
+        ]
+      },
+      {
         text: "二叉树",
         items: [
           { text: "102.二叉树的层序遍历" },
