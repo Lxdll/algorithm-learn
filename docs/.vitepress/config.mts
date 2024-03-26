@@ -46,6 +46,7 @@ export default defineConfig({
         items: [
           { text: '70.爬楼梯' },
           { text: '509.斐波那契数' },
+          { text: '1137.第N个泰波那契数' },
         ]
       },
       {
