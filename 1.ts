@@ -404,5 +404,30 @@ function isPalindrome(s: string): boolean {
 const isAZ = (char: string) => {
   return /[a-z]|[0-9]/i.test(char)
 }
-const result2 = isPalindrome("0P")
+
+function generateParenthesis(n: number): string[] {
+  const result: string[] = []
+
+  backTrace(n, result, 0, 0, '')
+
+  return result
+};
+
+const backTrace = (n: number, result: string[], leftNum: number, rightNum: number, str: string): void => {
+  if (leftNum === rightNum && leftNum === n) {
+      result.push(str)
+      return
+  }
+
+  if (leftNum < rightNum) return
+
+  if (leftNum < n) {
+      backTrace(n, result, leftNum + 1, rightNum, str += '(')
+  }
+
+  if (leftNum > rightNum) {
+      backTrace(n, result, leftNum, rightNum + 1, str += ')')
+  }
+}
+const result2 = generateParenthesis(3)
 console.log('%c [ result2 ]-349', 'font-size:13px; background:pink; color:#bf2c9f;', result2)

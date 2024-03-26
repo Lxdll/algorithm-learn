@@ -39,6 +39,12 @@ export default defineConfig({
         ]
       },
       {
+        text: "回溯",
+        items: [
+          { text: "22.括号生成" }
+        ]
+      },
+      {
         text: "链表",
         items: [{ text: "21.合并两个有序链表" }, { text: "141.环形链表" }],
       },
