@@ -45,6 +45,7 @@ export default defineConfig({
         text: "动态规划",
         items: [
           { text: '70.爬楼梯' },
+          { text: '509.斐波那契数' },
         ]
       },
       {
