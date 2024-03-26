@@ -323,8 +323,45 @@ function buildTree(inorder: number[], postorder: number[]): TreeNode | null {
   return root
 };
 
-const res = buildTree(
-  [9, 3, 15, 20, 7],
-  [9, 15, 7, 20, 3]
-)
-console.log('%c [ res ]-327', 'font-size:13px; background:pink; color:#bf2c9f;', res)
+// const res = buildTree(
+//   [9, 3, 15, 20, 7],
+//   [9, 15, 7, 20, 3]
+// )
+// console.log('%c [ res ]-327', 'font-size:13px; background:pink; color:#bf2c9f;', res)
+
+function lengthOfLIS(nums: number[]): number {
+  if (!nums.length) return 0
+  const dp = [nums[0]]
+
+  for (let i = 1; i < nums.length; i++) {
+    if (nums[i] > dp[dp.length - 1]) {
+      dp.push(nums[i])
+    } else {
+      const targetIndex = findIndex(dp, nums[i])
+        dp.splice(targetIndex + 1, 1, nums[i])
+    }
+  }
+
+  return dp.length
+};
+
+function findIndex(nums: number[], target: number) {
+  let pos = -1
+  let left = 0
+  let right = nums.length - 1
+
+  while (left <= right) {
+    const mid = Math.floor((right - left) / 2) + left
+
+    if (nums[mid] < target) {
+      pos = mid
+      left = mid + 1
+    } else {
+      right = mid - 1
+    }
+  }
+
+  return pos
+}
+const result2 = lengthOfLIS([4,10,4,3,8,9])
+console.log('%c [ result2 ]-349', 'font-size:13px; background:pink; color:#bf2c9f;', result2)
