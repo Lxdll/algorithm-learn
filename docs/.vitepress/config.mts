@@ -42,6 +42,12 @@ export default defineConfig({
         ],
       },
       {
+        text: "二分查找",
+        items: [
+          { text: "704.二分查找" }
+        ]
+      },
+      {
         text: "动态规划",
         items: [
           { text: '70.爬楼梯' },
