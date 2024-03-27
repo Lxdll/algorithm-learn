@@ -60,7 +60,8 @@ export default defineConfig({
         text: "二分查找",
         items: [
           { text: "704.二分查找" },
-          { text: "300.最长递增子序列" }
+          { text: "300.最长递增子序列" },
+          { text: "35.搜索插入位置" },
         ]
       },
       {
