@@ -67,6 +67,7 @@ export default defineConfig({
           { text: "374.猜数字大小" },
           { text: "278.第一个错误的版本" },
           { text: "367.有效的完全平方数" },
+          { text: "69.x的平方根" },
         ]
       },
       {
