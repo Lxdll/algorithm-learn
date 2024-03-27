@@ -68,6 +68,7 @@ export default defineConfig({
           { text: "278.第一个错误的版本" },
           { text: "367.有效的完全平方数" },
           { text: "69.x的平方根" },
+          { text: "441.排列硬币" },
         ]
       },
       {
