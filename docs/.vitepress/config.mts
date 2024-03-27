@@ -66,6 +66,7 @@ export default defineConfig({
           { text: "1351.统计有序矩阵中的负数" },
           { text: "374.猜数字大小" },
           { text: "278.第一个错误的版本" },
+          { text: "367.有效的完全平方数" },
         ]
       },
       {
