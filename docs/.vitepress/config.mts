@@ -62,6 +62,7 @@ export default defineConfig({
           { text: "704.二分查找" },
           { text: "300.最长递增子序列" },
           { text: "35.搜索插入位置" },
+          { text: "744.寻找比目标字母大的最小字母" },
         ]
       },
       {
