@@ -34,6 +34,7 @@ export default defineConfig({
           { text: "121.买卖股票的最佳时机" },
           { text: "122.买卖股票的最佳时机II" },
           { text: "13.罗马数字转整数" },
+          { text: "12.整数转罗马数字" },
         ],
       },
       {
