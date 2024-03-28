@@ -105,7 +105,32 @@ function maximalSquare(matrix: string[][]): number {
   return result * result
 };
 
-const result = maximalSquare([["1", "0", "1", "0", "0"], ["1", "0", "1", "1", "1"], ["1", "1", "1", "1", "1"], ["1", "0", "0", "1", "0"]])
+function longestPalindrome(s: string): string {
+  const dp = [1]
+  let max = 0
+  let result = ''
+
+  for (let i = 1; i < s.length; i++) {
+    if (s[i - 2] && s[i] === s[i - 2]) {
+      dp[i] = dp[i - 2] + 2
+    }
+
+    if (s[i] === s[i - 1]) {
+      dp[i] = dp[i - 1] + 1
+    }
+
+    dp[i] = 0
+
+    if (dp[i] > max) {
+      max = dp[i]
+      result = s.slice(i - dp[i], i + 1)
+    }
+  }
+
+  return result
+};
+
+const result = longestPalindrome("babad")
 
 // const result = searchRange([2, 2], 2)
 console.log('%c [ result ]-69', 'font-size:13px; background:pink; color:#bf2c9f;', result)
