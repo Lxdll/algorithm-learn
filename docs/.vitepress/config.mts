@@ -51,7 +51,11 @@ export default defineConfig({
       },
       {
         text: "链表",
-        items: [{ text: "21.合并两个有序链表" }, { text: "141.环形链表" }],
+        items: [
+          { text: "21.合并两个有序链表" },
+          { text: "141.环形链表" },
+          { text: "19.删除链表" }
+        ],
       },
       {
         text: "栈",
