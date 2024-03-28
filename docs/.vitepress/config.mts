@@ -32,6 +32,7 @@ export default defineConfig({
           { text: "27.移除元素" },
           { text: "28.找出字符串中第一个匹配项的下标" },
           { text: "121.买卖股票的最佳时机" },
+          { text: "122.买卖股票的最佳时机II" },
         ],
       },
       {
