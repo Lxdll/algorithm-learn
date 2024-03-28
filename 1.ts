@@ -79,5 +79,33 @@ function searchRange(nums: number[], target: number): number[] {
   return [startIndex, endIndex]
 };
 
-const result = searchRange([2, 2], 2)
+function maximalSquare(matrix: string[][]): number {
+  const m = matrix[0].length
+  const n = matrix.length
+
+  const dp = new Array(n).fill(new Array(m).fill(0))
+
+  let result = 1
+
+  for (let i = 0; i < n; i++) {
+    for (let j = 0; j < m; j++) {
+      if (i === 0 || j === 0) {
+        dp[i][j] = +matrix[i][j]
+      } else {
+        dp[i][j] = Math.min(
+          +dp[i - 1][j],
+          +dp[i - 1][j - 1],
+          +dp[i][j - 1],
+        ) + 1;
+        result = Math.max(result, dp[i][j])
+      }
+    }
+  }
+
+  return result * result
+};
+
+const result = maximalSquare([["1", "0", "1", "0", "0"], ["1", "0", "1", "1", "1"], ["1", "1", "1", "1", "1"], ["1", "0", "0", "1", "0"]])
+
+// const result = searchRange([2, 2], 2)
 console.log('%c [ result ]-69', 'font-size:13px; background:pink; color:#bf2c9f;', result)
