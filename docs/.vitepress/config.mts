@@ -91,6 +91,7 @@ export default defineConfig({
           { text: '746.使用最小花费爬楼梯' },
           { text: '221.最大正方形' },
           { text: '5.最长回文子串' },
+          { text: '1143.最长公共子序列' },
         ]
       },
       {
