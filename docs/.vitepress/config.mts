@@ -79,6 +79,7 @@ export default defineConfig({
           { text: "69.x的平方根" },
           { text: "441.排列硬币" },
           { text: "34.在排序数组中查找元素的第一个和最后一个位置" },
+          { text: "611.有效三角形的个数" },
         ]
       },
       {
