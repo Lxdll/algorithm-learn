@@ -40,7 +40,8 @@ export default defineConfig({
       {
         text: "双指针",
         items: [
-          { text: "125.验证回文串" }
+          { text: "125.验证回文串" },
+          { text: "26.删除有序数组中的重复项" },
         ]
       },
       {
