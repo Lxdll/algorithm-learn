@@ -47,6 +47,12 @@ export default defineConfig({
         ]
       },
       {
+        text: "数字",
+        items: [
+          { text: "9.回文数" },
+        ]
+      },
+      {
         text: "回溯",
         items: [
           { text: "22.括号生成" }
