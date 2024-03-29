@@ -38,6 +38,7 @@ export default defineConfig({
           { text: "169.多数元素" },
           { text: "1.两数之和" },
           { text: "15.三数之和" },
+          { text: "53.最大子数组和" },
         ],
       },
       {
