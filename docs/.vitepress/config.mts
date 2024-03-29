@@ -63,7 +63,8 @@ export default defineConfig({
         items: [
           { text: "21.合并两个有序链表" },
           { text: "141.环形链表" },
-          { text: "19.删除链表" }
+          { text: "19.删除链表" },
+          { text: "2.两数相加" },
         ],
       },
       {
