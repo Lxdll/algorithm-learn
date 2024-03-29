@@ -149,7 +149,32 @@ function longestCommonSubsequence(text1: string, text2: string): number {
   return dp[len1][len2]
 };
 
-const result = longestCommonSubsequence("abcde", "ace")
+function removeDuplicates(nums: number[]): number {
+  const len = nums.length
+  if (len === 1) return 1
+
+  let slow = 0
+  let fast = 1
+
+  let repeatFlag = false
+
+  while (fast < len) {
+    if (nums[slow] === nums[fast]) {
+      if (!repeatFlag) {
+        repeatFlag = true
+        slow++
+      }
+      fast++
+    } else {
+      repeatFlag = false
+      nums[++slow] = nums[fast++]
+    }
+  }
+
+  return slow + 1
+};
+
+const result = removeDuplicates([0, 0, 1, 1, 1, 1, 2, 3, 3])
 
 // const result = searchRange([2, 2], 2)
 console.log('%c [ result ]-69', 'font-size:13px; background:pink; color:#bf2c9f;', result)

@@ -42,6 +42,7 @@ export default defineConfig({
         items: [
           { text: "125.验证回文串" },
           { text: "26.删除有序数组中的重复项" },
+          { text: "80.删除有序数组中的重复项II" },
         ]
       },
       {
