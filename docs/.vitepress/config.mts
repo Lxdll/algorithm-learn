@@ -36,6 +36,7 @@ export default defineConfig({
           { text: "13.罗马数字转整数" },
           { text: "12.整数转罗马数字" },
           { text: "169.多数元素" },
+          { text: "1.两数之和" },
         ],
       },
       {
