@@ -48,6 +48,7 @@ export default defineConfig({
           { text: "26.删除有序数组中的重复项" },
           { text: "80.删除有序数组中的重复项II" },
           { text: "392.判断子序列" },
+          { text: "202.快乐数" },
         ]
       },
       {
