@@ -70,6 +70,7 @@ export default defineConfig({
           { text: "19.删除链表" },
           { text: "2.两数相加" },
           { text: "83.删除排序链表中的重复元素" },
+          { text: "82.删除排序链表中的重复元素II" },
         ],
       },
       {
