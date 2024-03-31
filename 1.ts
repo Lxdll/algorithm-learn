@@ -174,7 +174,27 @@ function removeDuplicates(nums: number[]): number {
   return slow + 1
 };
 
-const result = removeDuplicates([0, 0, 1, 1, 1, 1, 2, 3, 3])
+function sortedArrayToBST(nums: number[]): TreeNode | null {
+  const len = nums.length
+
+  if (len === 0) return null
+
+  const mid = Math.floor((len - 1) / 2)
+
+  const node = new TreeNode(nums[mid])
+
+  const left = nums.slice(0, mid)
+  const right = nums.slice(mid + 1)
+  node.left = left.length ? sortedArrayToBST(left) : null
+  node.right = right.length ? sortedArrayToBST(right) : null
+
+  return node
+};
+
+
+const result = sortedArrayToBST([-10, -3, 0, 5, 9])
+
+// const result = removeDuplicates([0, 0, 1, 1, 1, 1, 2, 3, 3])
 
 // const result = searchRange([2, 2], 2)
 console.log('%c [ result ]-69', 'font-size:13px; background:pink; color:#bf2c9f;', result)
