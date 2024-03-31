@@ -113,6 +113,7 @@ export default defineConfig({
           { text: '1143.最长公共子序列' },
           { text: '2466.统计构造好字符串的方案数' },
           { text: '139.单词拆分' },
+          { text: '198.打家劫舍' },
         ]
       },
       {
