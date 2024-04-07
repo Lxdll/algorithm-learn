@@ -72,6 +72,7 @@ export default defineConfig({
           { text: "2.两数相加" },
           { text: "83.删除排序链表中的重复元素" },
           { text: "82.删除排序链表中的重复元素II" },
+          { text: "206.反转链表" },
         ],
       },
       {
