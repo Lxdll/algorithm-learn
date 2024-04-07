@@ -73,6 +73,7 @@ export default defineConfig({
           { text: "83.删除排序链表中的重复元素" },
           { text: "82.删除排序链表中的重复元素II" },
           { text: "206.反转链表" },
+          { text: "92.反转链表II" },
         ],
       },
       {
